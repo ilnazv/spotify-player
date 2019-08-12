@@ -61,10 +61,10 @@ export class App extends React.Component<{}, AppState> {
     const { token, item } = this.state;
     return (
       <>
-        {token && item ? (
+        {token ? item && (
           <Player
-            artist={item.artists[0].name}
-            albumCover={item.album.images[0].url}
+            artist={item.artists.map((x: any) => x.name).join(', ')}
+            albumCover={item.album.images && item.album.images[0].url}
             song={item.name}
           />
         ) : (

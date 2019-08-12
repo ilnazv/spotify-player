@@ -12,7 +12,7 @@ const Button = styled.button`
   display: block;
 `;
 
-const Artist = styled.span`
+const Artist = styled.div`
   color: palevioletred;
 `;
 
