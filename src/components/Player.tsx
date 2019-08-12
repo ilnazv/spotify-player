@@ -12,11 +12,24 @@ const Button = styled.button`
   display: block;
 `;
 
-export default class Player extends React.Component {
+const Artist = styled.span`
+  color: palevioletred;
+`;
+
+
+interface PlayerProps {
+  artist: string;
+  song: string;
+  albumCover: string;
+}
+
+export default class Player extends React.Component<PlayerProps, {}> {
   public render(): JSX.Element {
+    const { artist, song, albumCover } = this.props;
     return <>
-    Player
-    <Button>button</Button>
+    <Artist>{artist}</Artist>
+    <Artist>{song}</Artist>
+    <img src={albumCover} alt="album cover"/>
     </>;
   }
 }
